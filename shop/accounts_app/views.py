@@ -12,6 +12,4 @@ def users(request):
     return HttpResponse("this is users page")
 
 def profile(request, username):
-    if username in usernames:
-        return HttpResponse(f"<h1>This is {username} profile<h1/>")
-    return HttpResponse("This username did't found :( ")
+    return render(request, "accounts_app/profile.html")
