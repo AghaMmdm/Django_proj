@@ -12,4 +12,4 @@ def users(request):
     return HttpResponse("this is users page")
 
 def profile(request, username):
-    return render(request, "accounts_app/profile.html")
+    return render(request, "accounts_app/profile.html", context= {"name" : username})
