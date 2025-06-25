@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     #my apps
     'blog_app',
     'accounts_app',
-    'home'
+    'home',
+    'courses_app'
 ]
 
 MIDDLEWARE = [
