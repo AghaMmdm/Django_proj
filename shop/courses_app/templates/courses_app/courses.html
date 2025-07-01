@@ -18,6 +18,8 @@
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Viewes</th>
               </tr>
             </thead>
             <tbody>
@@ -26,6 +28,8 @@
                     <th scope="row">{{forloop.counter}}</th>
                     <td>{{course.title}}</td>
                     <td>{{course.description}}</td>
+                    <td>{{ course.status }}</td>
+                    <td>{{ course.views }}</td>
                 </tr>
                 {%endfor%}
             </tbody>
