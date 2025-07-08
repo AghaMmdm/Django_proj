@@ -20,16 +20,18 @@
                 <th scope="col">Description</th>
                 <th scope="col">Status</th>
                 <th scope="col">Viewes</th>
+                <th scope="col">ID</th>
               </tr>
             </thead>
             <tbody>
                 {%for course in courses_list%}
                 <tr>
                     <th scope="row">{{forloop.counter}}</th>
-                    <td>{{course.title}}</td>
+                    <td><a href="/course/detail/{{ course.id }}">{{course.title}}</a></td>
                     <td>{{course.description}}</td>
                     <td>{{ course.status }}</td>
                     <td>{{ course.views }}</td>
+                    <td>{{ course.id }}</td>
                 </tr>
                 {%endfor%}
             </tbody>
