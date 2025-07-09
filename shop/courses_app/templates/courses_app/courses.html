@@ -29,8 +29,22 @@
                     <th scope="row">{{forloop.counter}}</th>
                     <td><a href="/course/detail/{{ course.id }}">{{course.title}}</a></td>
                     <td>{{course.description}}</td>
-                    <td>{{ course.status }}</td>
-                    <td>{{ course.views }}</td>
+                    <td>
+                        {% if course.status == True %}
+                        <span class="badge bg-success">{{ course.status }}</span>
+                        {% elif course.status == False %}
+                        <span class="badge bg-danger">{{ course.status }}</span>                        
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if course.views >= 100 %}
+                        <span class="badge bg-success">{{ course.views }}</span>
+                        {% elif course.views >= 10 %}
+                        <span class="badge bg-warning">{{ course.views }}</span>
+                        {% else %}
+                        <span class="badge bg-danger">{{ course.views }}</span>
+                        {% endif %}
+                    </td>
                     <td>{{ course.id }}</td>
                 </tr>
                 {%endfor%}
