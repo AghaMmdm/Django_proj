@@ -12,17 +12,20 @@
 <body>
     <div class="container">
         <h1 id = "test" class="text text-center">
-            This is home page
+            Add new Ticket
         </h1>
         <hr>
         <a href = "/course/list" class="btn btn-danger btn-block">
             courses list
         </a >
         <hr>
-        <div>
-            <img src="{% static "home/img/test_img.jpg" %}" alt="">
-        </div>
-        <hr>
+        <form action="">
+            <input class="form-controll" name = "title" type="text" placeholder="title">
+            <hr>
+            <textarea class="form-controll" name = "body" type="text" placeholder="your text"></textarea>
+            <hr>
+            <button class = "btn btn-success" type = "submit">send</button>
+        </form>
     </div>
 </body>
 </html>

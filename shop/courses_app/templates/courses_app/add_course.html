@@ -12,17 +12,20 @@
 <body>
     <div class="container">
         <h1 id = "test" class="text text-center">
-            This is home page
+            Add new course
         </h1>
         <hr>
         <a href = "/course/list" class="btn btn-danger btn-block">
             courses list
         </a >
         <hr>
-        <div>
-            <img src="{% static "home/img/test_img.jpg" %}" alt="">
-        </div>
-        <hr>
+        <form action="">
+            <input class="form-controll" name = "title" type="text" placeholder="title">
+            <hr>
+            <input class="form-controll" name = "description" type="text" placeholder="description">
+            <hr>
+            <button class = "btn btn-success" type = "submit">send</button>
+        </form>
     </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import course
 
 # Create your views here.
@@ -16,3 +16,12 @@ def course_detail(request, id):
         tmp.status = False
     tmp.save()
     return render(request, "courses_app/course_detail.html", context= { 'course' : tmp })
+
+
+def add_course(request):
+    title = request.GET.get('title')
+    desc = request.GET.get('description')
+    if title and desc:
+        course.objects.create(title= title, description = desc)
+        return redirect("/course/list")
+    return render(request, "courses_app/add_course.html")
