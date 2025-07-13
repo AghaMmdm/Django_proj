@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +22,7 @@
                 <th scope="col">Status</th>
                 <th scope="col">Viewes</th>
                 <th scope="col">ID</th>
+                <th scope="col">Image</th>
               </tr>
             </thead>
             <tbody>
@@ -46,6 +48,11 @@
                         {% endif %}
                     </td>
                     <td>{{ course.id }}</td>
+                    {% if not course.image %}
+                    <td><img style = "width: 50px; height: 50px;" src= "{% static "courses_app/img/default.jpg" %}" alt=""></td>
+                    {% else %}
+                    <td><img style = "width: 50px; height: 50px;" src= "{{ course.image.url }}" alt=""></td>
+                    {% endif %}
                 </tr>
                 {%endfor%}
             </tbody>
