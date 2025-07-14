@@ -19,7 +19,8 @@
             courses list
         </a >
         <hr>
-        <form action="">
+        <form action="" method="post">
+            {% csrf_token %}
             <input class="form-controll" name = "title" type="text" placeholder="title">
             <hr>
             <input class="form-controll" name = "description" type="text" placeholder="description">

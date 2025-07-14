@@ -24,4 +24,12 @@ def add_course(request):
     if title and desc:
         course.objects.create(title= title, description = desc)
         return redirect("/course/list")
+    
+    if request.method == "POST":
+        title = request.POST.get('title')
+        desc = request.POST.get('description')
+        if title and desc:
+            course.objects.create(title= title, description = desc)
+            return redirect("/course/list")
+    
     return render(request, "courses_app/add_course.html")
